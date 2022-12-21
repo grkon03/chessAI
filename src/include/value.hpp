@@ -8,12 +8,18 @@ namespace chessAI
 
     typedef double Value;
 
-    const Value WHITE_MATEIN = 0x100000;
-    const Value BLACK_MATEIN = -WHITE_MATEIN;
+    namespace ValueC
+    {
+        const Value WHITE_MATEIN = 0x100000;
+        const Value BLACK_MATEIN = -WHITE_MATEIN;
+    }
 
     // functions
 
-    Player IsMateIn(Value);
-    int MateIn(Value);
-    Value ValueMateIn(Player, int);
+    namespace ValueF
+    {
+        Player IsMateIn(Value);
+        int MateIn(Value);
+        Value ValueMateIn(Player, int);
+    }
 }

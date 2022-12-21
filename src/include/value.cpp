@@ -2,37 +2,42 @@
 
 namespace chessAI
 {
-    Player IsMateIn(Value v)
+    namespace ValueF
     {
-        if (v > WHITE_MATEIN)
-            return White;
-        else if (v < BLACK_MATEIN)
-            return Black;
-        else
-            return NoPlayer;
-    }
+        using namespace ValueC;
 
-    int MateIn(Value v)
-    {
-        switch (IsMateIn(v))
+        Player IsMateIn(Value v)
         {
-        case White:
-            return (v - WHITE_MATEIN);
-        case Black:
-            return (BLACK_MATEIN - v);
-        default:
-            return 0;
+            if (v > WHITE_MATEIN)
+                return White;
+            else if (v < BLACK_MATEIN)
+                return Black;
+            else
+                return NoPlayer;
         }
-    }
 
-    Value ValueMateIn(Player player, int mateIn)
-    {
-        switch (player)
+        int MateIn(Value v)
         {
-        case White:
-            return (WHITE_MATEIN + mateIn);
-        case Black:
-            return (BLACK_MATEIN - mateIn);
+            switch (IsMateIn(v))
+            {
+            case White:
+                return (v - WHITE_MATEIN);
+            case Black:
+                return (BLACK_MATEIN - v);
+            default:
+                return 0;
+            }
+        }
+
+        Value ValueMateIn(Player player, int mateIn)
+        {
+            switch (player)
+            {
+            case White:
+                return (WHITE_MATEIN + mateIn);
+            case Black:
+                return (BLACK_MATEIN - mateIn);
+            }
         }
     }
 }
