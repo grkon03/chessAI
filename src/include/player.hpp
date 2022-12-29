@@ -7,7 +7,7 @@ namespace chessAI
         NoPlayer = -1,
         White = 0,
         Black,
-        PlayerLim,
+        PlayerLimit,
     };
 
     inline Player operator!(Player p) { return ((p == White) || (p == Black)) ? Player(1 - int(p)) : p; }

@@ -3,21 +3,37 @@
 #include "bitboard.hpp"
 #include "square.hpp"
 #include "player.hpp"
+#include "piece.hpp"
 
 namespace chessAI
 {
+    constexpr int trackingMax = 200;
+
+    struct ChessMove
+    {
+        Square from;
+        Square to;
+        PieceType promotion = PieceTypeLimit;
+    };
+
     class ChessBoard
     {
     private:
         // variables
-        Bitboard whitePieces;
-        Bitboard blackPieces;
-        Bitboard pawns;
-        Bitboard knights;
-        Bitboard bishops;
-        Bitboard rooks;
-        Bitboard queens;
-        Bitboard kings;
+
+        // board info
+
+        Bitboard pieceColor[PlayerLimit];
+        Bitboard pieceType[PieceTypeLimit];
+
+        // turn info
+
+        int spentTurn;
+        Player toPlay;
+
+        // tracking info
+
+        ChessMove tracking[trackingMax];
 
     public:
         ChessBoard();

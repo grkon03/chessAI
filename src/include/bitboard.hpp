@@ -1,6 +1,8 @@
 #pragma once
 
 #include <iostream>
+#include "piece.hpp"
+#include "player.hpp"
 #include "square.hpp"
 
 namespace chessAI
@@ -11,17 +13,11 @@ namespace chessAI
     {
         constexpr int sizeOfBB = sizeof(Bitboard) * 8; // bitboard size
         Bitboard FullBB;                               // full "1" bit;
-        Bitboard UnitBB[SquareLimit];                  // bitboard corresponding to a square
-        Bitboard FileBB[FileLimit];
-        Bitboard RankBB[RankLimit];
-        Bitboard fWhitePiecesBB;
-        Bitboard fBlackPiecesBB;
-        Bitboard fPawnsBB;
-        Bitboard fKnightsBB;
-        Bitboard fBishopsBB;
-        Bitboard fRooksBB;
-        Bitboard fQueensBB;
-        Bitboard fKingsBB;
+        Bitboard UnitBB[SquareLimit];                  // corresponding to a square
+        Bitboard FileBB[FileLimit];                    // corresponding to a file
+        Bitboard RankBB[RankLimit];                    // corresponding to a rank
+        Bitboard fPieceColorBB[PlayerLimit];           // corresponding to piece colors of initial position
+        Bitboard fPieceTypeBB[PieceTypeLimit];         // corresponding to piece types of initial position
 
         void Init();
     }

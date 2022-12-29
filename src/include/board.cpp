@@ -6,13 +6,29 @@ namespace chessAI
 
     ChessBoard::ChessBoard()
     {
-        whitePieces = BitboardC::fWhitePiecesBB;
-        blackPieces = BitboardC::fBlackPiecesBB;
-        pawns = BitboardC::fPawnsBB;
-        knights = BitboardC::fKnightsBB;
-        bishops = BitboardC::fBishopsBB;
-        rooks = BitboardC::fRooksBB;
-        queens = BitboardC::fQueensBB;
-        kings = BitboardC::fKingsBB;
+        int i;
+
+        // board info
+
+        for (i = 0; i < PlayerLimit; i++)
+        {
+            pieceColor[i] = BitboardC::fPieceColorBB[i];
+        }
+        for (i = 0; i < PieceTypeLimit; i++)
+        {
+            pieceType[i] = BitboardC::fPieceTypeBB[i];
+        }
+
+        // turn info
+
+        spentTurn = 0;
+        toPlay = White;
+
+        // tracking info
+
+        for (i = 0; i < trackingMax; i++)
+        {
+            tracking[i] = ChessMove{SquareLimit, SquareLimit, PieceTypeLimit};
+        }
     }
 }
