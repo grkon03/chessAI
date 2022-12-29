@@ -37,6 +37,8 @@ namespace chessAI
                 return (WHITE_MATEIN + mateIn);
             case Black:
                 return (BLACK_MATEIN - mateIn);
+            default:
+                return 0;
             }
         }
     }

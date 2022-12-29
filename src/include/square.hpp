@@ -104,20 +104,19 @@ namespace chessAI
 
     // conversions
 
-    Square operator&(File f, Rank r) { return (f == FileLimit || r == RankLimit) ? SquareLimit : Square(r * 8 + f); }
+    inline Square operator&(File f, Rank r) { return (f == FileLimit || r == RankLimit) ? SquareLimit : Square(r * 8 + f); };
 
     namespace SquareF
     {
         // operations
 
         template <typename Type>
-        Type enum_cast(Square sq) { throw std::bad_cast; }
+        Type enum_cast(Square sq) { throw std::bad_cast(); }
 
         template <>
-        File enum_cast<File>(Square sq) { return (sq == SquareLimit) ? FileLimit : File(sq % 8); }
+        File enum_cast<File>(Square sq);
 
         template <>
-        Rank enum_cast<Rank>(Square sq) { return (sq == SquareLimit) ? RankLimit : Rank(sq / 8); }
-
+        Rank enum_cast<Rank>(Square sq);
     }
 }

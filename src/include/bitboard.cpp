@@ -4,6 +4,13 @@ namespace chessAI
 {
     namespace BitboardC
     {
+        Bitboard FullBB;
+        Bitboard UnitBB[SquareLimit];
+        Bitboard FileBB[FileLimit];
+        Bitboard RankBB[RankLimit];
+        Bitboard fPieceColorBB[PlayerLimit];
+        Bitboard fPieceTypeBB[PieceTypeLimit];
+
         void Init()
         {
             int i, j;
