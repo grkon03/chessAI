@@ -1,8 +1,0 @@
-{
-  "files.associations": {
-    "typeinfo": "cpp",
-    "ios": "cpp",
-    "bitset": "cpp",
-    "cstddef": "cpp"
-  }
-}
