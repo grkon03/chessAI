@@ -16,7 +16,7 @@ namespace chessAI
                 return NoPlayer;
         }
 
-        int MateIn(Value v)
+        int HowMateIn(Value v)
         {
             switch (IsMateIn(v))
             {

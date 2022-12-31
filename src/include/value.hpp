@@ -19,7 +19,7 @@ namespace chessAI
     namespace ValueF
     {
         Player IsMateIn(Value);
-        int MateIn(Value);
+        int HowMateIn(Value);
         Value ValueMateIn(Player, int);
     }
 }
